@@ -55,6 +55,14 @@ class FlushbarRoute<T> extends OverlayRoute<T> {
               : const Alignment(1.0, 1.0);
           break;
         }
+      case FlushbarPosition.TOP_RIGHT:
+        {
+          _initialAlignment = const Alignment(1.0, -2.0);
+          _endAlignment = flushbar.endOffset != null
+              ? const Alignment(-1.0, 1.0) + Alignment(flushbar.endOffset!.dx, flushbar.endOffset!.dy)
+              : const Alignment(1.0, -1.0);
+          break;
+        }
     }
   }
 
@@ -199,7 +207,8 @@ class FlushbarRoute<T> extends OverlayRoute<T> {
     if (flushbar.dismissDirection == FlushbarDismissDirection.HORIZONTAL) {
       return DismissDirection.horizontal;
     } else {
-      if (flushbar.flushbarPosition == FlushbarPosition.TOP) {
+      if (flushbar.flushbarPosition == FlushbarPosition.TOP ||
+          flushbar.flushbarPosition == FlushbarPosition.TOP_RIGHT) {
         return DismissDirection.up;
       } else {
         return DismissDirection.down;

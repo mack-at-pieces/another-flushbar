@@ -747,7 +747,7 @@ class _FlushbarState<K extends Object?> extends State<Flushbar<K>> with TickerPr
 }
 
 /// Indicates if flushbar is going to start at the [TOP] or at the [BOTTOM]
-enum FlushbarPosition { TOP, BOTTOM, BOTTOM_RIGHT }
+enum FlushbarPosition { TOP, BOTTOM, BOTTOM_RIGHT, TOP_RIGHT }
 
 /// Indicates if flushbar will be attached to the edge of the screen or not
 enum FlushbarStyle { FLOATING, GROUNDED }
